@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Document</title>
+    <style>
+      .background {
+        width: 480px;
+        height: 459px;
+        left: 272px;
+        top: 158px;
+        background: #c2f5ff;
+        border-radius: 12px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+      }
+      .image {
+        width: 96px;
+        height: 96px;
+        top: 4.26px;
+        left: 0%;
+        right: 0%;
+        top: 4.44%;
+        bottom: -4.44%;
+      }
+      .youWin {
+        width: 256px;
+        height: 48px;
+        left: 384px;
+        top: 289px;
+        font-family: "StratosSkyeng";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 40px;
+        line-height: 48px;
+        font-feature-settings: "pnum" on, "lnum" on;
+        color: #004980;
+      }
+      .timeSpent {
+        width: 230px;
+        height: 32px;
+        left: 397px;
+        top: 365px;
+        font-family: "StratosSkyeng";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 32px;
+        font-feature-settings: "pnum" on, "lnum" on;
+
+        color: #000000;
+      }
+      .time {
+        width: 155px;
+        height: 72px;
+        left: 435px;
+        top: 407px;
+
+        font-family: "StratosSkyeng";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 64px;
+        line-height: 72px;
+        color: #000000;
+      }
+      .button {
+        width: 246px;
+        height: 50px;
+        left: 389px;
+        top: 519px;
+        background: #7ac100;
+        border-radius: 12px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="background">
+      <img class="image" src="CardIcons/lose.svg" alt="" />
+      <div class="youWin">Вы проиграли!</div>
+      <div class="timeSpent">Затраченное время</div>
+      <div class="time">0000</div>
+      <button class="button">Играть снова</button>
+    </div>
+    <script>
+      document.querySelector('.time').textContent = localStorage.spendTime
+      document.querySelector('.button').onclick = ()=>{
+        window.location.href = "index.html" 
+      }
+    </script>
+  </body>
+</html>

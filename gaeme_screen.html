@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            .body {
+                display: flex;
+                justify-content: center;
+                padding-top: 5%;
+            }
+            .desk {
+                background: #004980;
+                width: 1024px;
+                height: 774px;
+            }
+            .button {
+                font-family: "StratosSkyeng";
+                font-style: normal;
+                font-weight: 400;
+                font-size: 24px;
+                line-height: 32px;
+                margin-top: 12px;
+            }
+            .btn-hover {
+                width: 246px;
+                color: #fff;
+                cursor: pointer;
+                margin: 20px;
+                height: 55px;
+                text-align: center;
+                border: none;
+                background-size: 300% 100%;
+                border-radius: 50px;
+
+                -o-transition: all 0.4s ease-in-out;
+                -webkit-transition: all 0.4s ease-in-out;
+                transition: all 0.4s ease-in-out;
+            }
+
+            .btn-hover:hover {
+                background-position: 100% 0;
+
+                -o-transition: all 0.4s ease-in-out;
+                -webkit-transition: all 0.4s ease-in-out;
+                transition: all 0.4s ease-in-out;
+            }
+
+            .btn-hover:focus {
+                outline: none;
+            }
+
+            .btn-hover.color-1 {
+                background-image: linear-gradient(
+                    to right,
+                    #25aae1,
+                    #40e495,
+                    #30dd8a,
+                    #2bb673
+                );
+                box-shadow: 0 4px 15px 0 rgba(49, 196, 190, 0.75);
+            }
+
+            .header {
+                display: flex;
+                align-items: flex-start;
+                justify-content: space-between;
+                padding-top: 40px;
+                padding-left: 22px;
+                padding-right: 22px;
+            }
+            .timer {
+                font-family: "StratosSkyeng";
+                font-style: normal;
+                font-weight: 400;
+                font-size: 64px;
+                line-height: 72px;
+                color: #ffffff;
+            }
+            .playing_field {
+                display: flex;
+                align-items: stretch;
+                gap: 10px;
+                flex-wrap: wrap;
+                justify-content: center;
+                padding-left: 180px;
+                padding-right: 180px;
+                padding-top: 50px;
+                padding-bottom: 50px;
+            }
+        </style>
+    </head>
+
+    <body class="body">
+        <div class="desk">
+            <div class="header">
+                <div class="timer"></div>
+                <button class="btn-hover color-1 button buttons">
+                    Начать заново
+                </button>
+            </div>
+            <div class="playing_field">
+                <!-- <img src="CardIcons/shirt.svg" alt="card" class="card" />
+                <img src="CardIcons/shirt.svg" alt="card" class="card" />
+                <img src="CardIcons/shirt.svg" alt="card" class="card" />
+                <img src="CardIcons/shirt.svg" alt="card" class="card" />
+                <img src="CardIcons/shirt.svg" alt="card" class="card" />
+                <img src="CardIcons/shirt.svg" alt="card" class="card" />
+                <img src="CardIcons/shirt.svg" alt="card" class="card" />
+                <img src="CardIcons/shirt.svg" alt="card" class="card" />
+                <img src="CardIcons/shirt.svg" alt="card" class="card" />
+                <img src="CardIcons/shirt.svg" alt="card" class="card" />
+                <img src="CardIcons/shirt.svg" alt="card" class="card" />
+                <img src="CardIcons/shirt.svg" alt="card" class="card" /> -->
+            </div>
+            <footer class="footer"></footer>
+        </div>
+
+        <script>
+            const timer = document.querySelector(".timer");
+
+            let m1 = (m2 = s1 = s2 = 0);
+            let timerStop = setInterval(timerEngine,1000);
+            timer.textContent = `${m1}${m2}:${s1}${s2}`;
+
+            function timerEngine() {
+                if (m2 === 9) {
+                    m2 = 0;
+                    m1++;
+                }
+                if (s1 === 5 && s2 === 9) {
+                    s1 = 0;
+                    s2 = 0;
+                    m2++;
+                } else {
+                    if (s2 === 9) {
+                        s2 = 0;
+                        s1++;
+                    } else {
+                        s2++;
+                    }
+                }
+                timer.textContent = `${m1}${m2}:${s1}${s2}`;
+            }
+        </script>
+        <script src="infoObj.js"></script>
+        <script src="clases.js"></script>
+        <script src="templateEngine.js"></script>
+        <script src="utility.js"></script>
+        <script src="game.js"></script>
+    </body>
+</html>
